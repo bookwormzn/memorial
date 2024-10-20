@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    .badge {
+      background-color: rgb(240, 238, 238);
+      /* Soft yeşil */
+      color: #535353;
+      /* Koyu gri metin rengi */
+      border: 1px solid #fff;
+      /* Beyaz kenar */
+      border-radius: 20px;
+      /* Yuvarlak köşeler */
+      padding: 5px 10px;
+      /* İç boşluk */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      /* Hafif gölge */
+      transition: background-color 0.3s, transform 0.3s;
+      /* Renk ve konum geçişi */
+      transform: translateY(-50px);
+      /* 3 birim yukarı kaydır */
+    }
+
+    .badge-grey {
+      background-color: #D1D1D1;
+      /* Gri */
+    }
+
+    .profile-container {
+      text-align: center;
+      position: relative;
+    }
+
+    .header-image {
+      background-image: url('./plant-right.jpg');
+      height: 400px;
+      background-size: cover;
+      background-position: 20% 50%;
+    }
+
+    .profile-info {
+      margin-top: -110px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0 20rem;
+    }
+
+    .profile-info img {
+      width: 350px;
+      height: 350px;
+      border: 5px solid white;
+      margin-right: 8rem;
+      margin-bottom: 10rem;
+    }
+
+    .details {
+      text-align: left;
+    }
+
+    .date-location {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-left: 1rem;
+    }
+
+    /* Apply Roboto Mono to the about section paragraphs */
+    #about-section p {
+      font-family: 'Roboto Mono', monospace;
+      /* Use Roboto Mono for the paragraph text */
+    }
+
+     #Favoriler-section p {
+      font-family: 'Roboto Mono', monospace;
+      /* Use Roboto Mono for the paragraph text */
+    }
+
+       #Zaman-section p {
+      font-family: 'Roboto Mono', monospace;
+      /* Use Roboto Mono for the paragraph text */
+    }
+    
+
+     #galeri-section p {
+      font-family: 'Roboto Mono', monospace;
+      /* Use Roboto Mono for the paragraph text */
+    }
+
+    #hatıra-section p {
+      font-family: 'Roboto Mono', monospace;
+      /* Use Roboto Mono for the paragraph text */
+    }
+
+  .main-timeline10:after,
+.main-timeline10:before {
+    content: "";
+    display: block;
+    width: 100%;
+    clear: both;
+}
+
+.main-timeline10 .timeline {
+    padding: 0;
+    display: -webkit-inline-box;
+}
+
+.main-timeline10 .col-md-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 25%;
+    max-width: 24%;
+}
+
+.main-timeline10 .timeline-inner {
+    text-align: center;
+    margin: 20px 20px 35px 35px;
+    position: relative;
+}
+
+.main-timeline10 .timeline-inner:after {
+    content: "";
+    width: 120%;
+    height: 3px;
+    background: rgb(240, 238, 238); /* Soft gray */
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+}
+
+.main-timeline10 .timeline:last-child .timeline-inner:after {
+    width: 0;
+}
+
+.main-timeline10 .year {
+    background: rgb(240, 238, 238); /* Soft gray */
+    padding: 5px 0;
+    border-radius: 30px 0;
+    font-size: 26px;
+    font-weight: 700;
+    color: #000; /* Black text color */
+    z-index: 1;
+    position: relative;
+}
+
+.main-timeline10 .year:after,
+.main-timeline10 .year:before {
+    position: absolute;
+    top: -19px;
+    content: "";
+}
+
+.main-timeline10 .year:before {
+    right: 0;
+    border: 10px solid transparent;
+    border-bottom: 10px solid rgb(240, 238, 238); /* Soft gray */
+    border-right: 10px solid rgb(240, 238, 238); /* Soft gray */
+}
+
+.main-timeline10 .year:after {
+    width: 25px;
+    height: 19px;
+    border-radius: 0 0 20px;
+    background: #fff; /* White */
+    right: 1px;
+}
+
+.main-timeline10 .timeline-content {
+    padding: 10px 10px 30px;
+    border-left: 3px solid rgb(240, 238, 238); /* Soft gray */
+    position: relative;
+}
+
+.main-timeline10 .timeline-content:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -1px;
+    border: 10px solid transparent;
+    border-top: 10px solid rgb(240, 238, 238); /* Soft gray */
+    border-left: 10px solid rgb(240, 238, 238); /* Soft gray */
+}
+
+.main-timeline10 .timeline-content:after {
+    content: "";
+    width: 25px;
+    height: 19px;
+    border-radius: 20px 0 0;
+    background: #fff; /* White */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.main-timeline10 .post {
+    font-size: 26px;
+    color: #000; /* Black title */
+}
+
+.main-timeline10 .description {
+    font-size: 14px;
+    color: #777; /* Gray subtext */
+}
+
+.main-timeline10 .timeline-icon {
+    width: 70px;
+    height: 70px;
+    line-height: 65px;
+    border-radius: 50%;
+    border: 5px solid rgb(240, 238, 238); /* Soft gray */
+    background: #fff; /* White */
+    font-size: 30px;
+    color: #555; /* Dark gray */
+    z-index: 1;
+    position: absolute;
+    bottom: -35px;
+    left: -35px;
+}
+
+/* Even elements styling */
+.main-timeline10 .timeline:nth-child(2n) .year {
+    background: rgb(240, 238, 238); /* Soft gray */
+}
+
+.main-timeline10 .timeline:nth-child(2n) .year:before {
+    border-bottom-color: rgb(240, 238, 238); /* Soft gray */
+    border-right-color: rgb(240, 238, 238); /* Soft gray */
+}
+
+.main-timeline10 .timeline:nth-child(2n) .timeline-content {
+    border-left-color: rgb(240, 238, 238); /* Soft gray */
+}
+
+.main-timeline10 .timeline:nth-child(2n) .timeline-content:before {
+    border-top-color: rgb(240, 238, 238); /* Soft gray */
+    border-left-color: rgb(240, 238, 238); /* Soft gray */
+}
+
+.main-timeline10 .timeline:nth-child(2n) .timeline-icon {
+    border-color: rgb(240, 238, 238); /* Soft gray */
+}
+
+.main-timeline10 .timeline:nth-child(3n) .year {
+    background: rgb(240, 238, 238); /* Soft gray */
+}
+
+.main-timeline10 .timeline:nth-child(3n) .year:before {
+    border-bottom-color: rgb(240, 238, 238); /* Soft gray */
+    border-right-color: rgb(240, 238, 238); /* Soft gray */
+}
+
+.main-timeline10 .timeline:nth-child(3n) .timeline-content {
+    border-left-color: rgb(240, 238, 238); /* Soft gray */
+}
+
+.main-timeline10 .timeline:nth-child(3n) .timeline-content:before {
+    border-top-color: rgb(240, 238, 238); /* Soft gray */
+    border-left-color: rgb(240, 238, 238); /* Soft gray */
+}
+
+.main-timeline10 .timeline:nth-child(3n) .timeline-icon {
+    border-color: rgb(240, 238, 238); /* Soft gray */
+}
+
+.main-timeline10 .timeline:nth-child(4n) .year {
+    background: rgb(240, 238, 238); /* Soft gray */
+}
+
+.main-timeline10 .timeline:nth-child(4n) .year:before {
+    border-bottom-color: rgb(240, 238, 238); /* Soft gray */
+    border-right-color: rgb(240, 238, 238); /* Soft gray */
+}
+
+.main-timeline10 .timeline:nth-child(4n) .timeline-content {
+    border-left-color: rgb(240, 238, 238); /* Soft gray */
+}
+
+.main-timeline10 .timeline:nth-child(4n) .timeline-content:before {
+    border-top-color: rgb(240, 238, 238); /* Soft gray */
+    border-left-color: rgb(240, 238, 238); /* Soft gray */
+}
+
+.main-timeline10 .timeline:nth-child(4n) .timeline-icon {
+    border-color: rgb(240, 238, 238); /* Soft gray */
+}
+
+@media only screen and (max-width: 990px) {
+    .main-timeline10 .timeline-inner:after {
+        width: 110%;
+    }
+    .main-timeline10 .timeline:nth-child(2n) .timeline-inner:after {
+        width: 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .main-timeline10 .timeline {
+        margin-bottom: 50px;
+    }
+    .main-timeline10 .timeline-inner:after,
+    .main-timeline10 .timeline:nth-child(2n) .timeline-inner:after {
+        width: 100%;
+        height: 3px;
+        left: 0;
+    }
+}
+
+
+  </style>
+</head>
+
+
+<body>
+  <div class="profile-container">
+    <div class="header-image"></div>
+
+    <div class="profile-info">
+      <img src="./ResulGülmez.png" alt="Profile Photo">
+
+      <div class="details">
+        <h2 style="font-size: 2.5rem; font-weight: bold; font-family: 'Roboto Mono', monospace;">Resul Gülmez</h2>
+
+    <div class="date-location">
+      <div style="display: flex; align-items: center; gap: 20px;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-calendar-heart"
+          viewBox="0 0 16 16">
+          <path fill-rule="evenodd"
+            d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM1 14V4h14v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1m7-6.507c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
+        </svg>
+        <p style="margin-left: 10px; margin-top: 20px; font-family: 'Roboto Mono', monospace;">4 Temmuz, 2000 - 4 Temmuz,
+          2100</p>
+      </div>
+    </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+  <div class="d-flex gap-1 justify-content-center">
+    <span class="badge d-flex align-items-center p-1 pe-2 rounded-pill">
+      <a href="#about-section" style="text-decoration: none; color: inherit;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-file-person me-1"
+          viewBox="0 0 16 16">
+          <path
+            d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+          <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+        </svg> Hakkında
+      </a>
+    </span>
+    <span class="badge d-flex align-items-center p-1 pe-10 rounded-pill">
+      <a href="#Favoriler-section" style="text-decoration: none; color: inherit;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-heart-fill me-1"
+        viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
+      </svg>Favoriler
+      </a>
+    </span>
+    <span class="badge d-flex align-items-center p-1 pe-10 rounded-pill">
+      <a href="#Zaman-section" style="text-decoration: none; color: inherit;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-calendar-week me-1"
+        viewBox="0 0 16 16">
+        <path
+          d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
+        <path
+          d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
+      </svg>Zaman Çizelgesi
+      </a>
+    </span>
+    <span class="badge d-flex align-items-center p-1 pe-2 rounded-pill">
+      <a href="#galeri-section" style="text-decoration: none; color: inherit;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-images me-1"
+        viewBox="0 0 16 16">
+        <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
+        <path
+          d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2M14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1M2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1z" />
+      </svg>Galeri
+      </a>
+    </span>
+    <span class="badge d-flex align-items-center p-1 pe-2 rounded-pill">
+      <a href="#hatıra-section" style="text-decoration: none; color: inherit;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-memory me-1"
+        viewBox="0 0 16 16">
+        <path
+          d="M1 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.586a1 1 0 0 0 .707-.293l.353-.353a.5.5 0 0 1 .708 0l.353.353a1 1 0 0 0 .707.293H15a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm.5 1h3a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5m5 0h3a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5m4.5.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5" />
+      </svg>Hatıra Duvarı
+      </a>
+    </span>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-qb6WXj7B2zFVlps1e/YpTAcfewcdvZ6JJ1LcUp8iZfqK2EbsrKRmTPDztkLXQKp8" crossorigin="anonymous"></script>
+  
+
+
+
+
+
+
+
+
+  
+  <figure class="text-center mt-5">
+    <blockquote class="blockquote">
+      <p>A well-known quote, contained in a blockquote element.</p>
+    </blockquote>
+    <figcaption class="blockquote-footer">
+      Someone famous in <cite title="Source Title">Source Title
+    </figcaption>
+  </figure>
+  
+  <div class="container px-4 py-5" id="about-section">
+    <h2 class="pb-2 border-bottom">Hakkında</h2>
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Morbi fames nostra bibendum nam neque facilisi volutpat. Ex
+        placerat cursus sollicitudin orci facilisis elit adipiscing felis. Venenatis tempus tempor inceptos; mi commodo
+        vel
+        ante accumsan vel. Curae nisi egestas proin montes vivamus sociosqu congue. Aquis et proin aptent magnis suscipit.
+        Aptent mollis condimentum fames tristique; vehicula sagittis elementum. Sed quam donec potenti turpis quis?
+        Torquent
+        ultricies habitasse velit facilisi dolor elit cubilia dictum?</p>
+      <p>Sollicitudin ac nisi nascetur augue condimentum. Vitae sagittis tempor nam integer curabitur faucibus aenean
+        condimentum rutrum. Ex mauris et, montes laoreet velit nec. Venenatis adipiscing nunc; aenean parturient
+        vestibulum
+        ligula. Quisque morbi primis nascetur commodo; lacus dis pellentesque sem. Congue integer pretium eleifend
+        dictumst;
+        dis taciti sociosqu aliquam. Penatibus luctus suspendisse aptent cursus cursus finibus aliquet accumsan. Pharetra
+        orci dictum suscipit est suscipit quisque mauris. Nam metus nam blandit adipiscing morbi, porttitor aptent
+        aliquam!</p>
+      <p>Lacus amet a dolor sodales imperdiet. Asit himenaeos lectus sed odio dapibus felis. Interdum varius egestas
+        eleifend blandit netus euismod sociosqu volutpat integer. Facilisi parturient mollis sit nascetur; nisl penatibus.
+        Ridiculus lectus mattis tincidunt potenti adipiscing. Aliquam eu lectus vestibulum faucibus curae montes hendrerit
+        mattis. Curabitur erat aptent dictumst bibendum eleifend velit lacinia. Hendrerit torquent class nullam potenti
+        ligula. Commodo pellentesque felis eleifend mollis libero mattis nostra hendrerit.</p>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+<div class="container px-4 py-5" id="Favoriler-section">
+  <h2 class="pb-2 border-bottom">Favoriler</h2>
+  <div class="row g-4 py-5 row-cols-1 row-cols-md-2 row-cols-lg-3">
+    <!-- En Sevdiği Söz -->
+    <div class="col">
+      <div class="card h-100 text-center" style="background-color: #f8f9fa; border: none;">
+        <div class="card-body">
+          <h5 class="card-title">En Sevdiği Söz</h5>
+          <p class="card-text" style="color: gray;">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus dignissim nunc sit amet bibendum. Morbi
+          consectetur maximus ipsum, et bibendum leo bibendum ut."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- En Sevdiği Kitap -->
+    <div class="col">
+      <div class="card h-100 text-center" style="background-color: #f8f9fa; border: none;">
+        <div class="card-body">
+          <h5 class="card-title">En Sevdiği Kitap</h5>
+          <p class="card-text" style="color: gray;">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus dignissim nunc sit amet bibendum. Morbi
+          consectetur maximus ipsum, et bibendum leo bibendum ut. "</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- En Sevdiği Seyahat Yeri -->
+    <div class="col">
+      <div class="card h-100 text-center" style="background-color: #f8f9fa; border: none;">
+        <div class="card-body">
+          <h5 class="card-title">En Sevdiği Seyahat Yeri</h5>
+          <p class="card-text" style="color: gray;">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus dignissim nunc sit amet bibendum. Morbi
+          consectetur maximus ipsum, et bibendum leo bibendum ut."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- En Sevdiği Yazar -->
+    <div class="col">
+      <div class="card h-100 text-center" style="background-color: #f8f9fa; border: none;">
+        <div class="card-body">
+          <h5 class="card-title">En Sevdiği Yazar</h5>
+          <p class="card-text" style="color: gray;">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus dignissim nunc sit amet bibendum. Morbi
+          consectetur maximus ipsum, et bibendum leo bibendum ut."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- En Çok Zevk Aldığı Şey -->
+    <div class="col">
+      <div class="card h-100 text-center" style="background-color: #f8f9fa; border: none;">
+        <div class="card-body">
+          <h5 class="card-title">En Çok Zevk Aldığı Şey</h5>
+          <p class="card-text" style="color: gray;">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dapibus dignissim nunc sit amet bibendum. Morbi
+          consectetur maximus ipsum, et bibendum leo bibendum ut. "</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container " id= "Zaman-section">
+  <h2 class="pb-2 border-bottom">Zaman Çizelgesi</h2>
+  <div class="row">
+    <div class="main-timeline10">
+      <div class="col-md-3 col-sm-6 timeline">
+        <div class="timeline-inner">
+          <div class="year">2015</div>
+          <div class="timeline-content">
+            <div class="post">Lorem Ipsum</div>
+            <p class="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ullamcorper odio. Phasellus congue
+              varius placerat. Quisque vel purus convallis.
+            </p>
+          </div>
+          <div class="timeline-icon">
+            <i class="fa fa-globe"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 timeline">
+        <div class="timeline-inner">
+          <div class="year">2016</div>
+          <div class="timeline-content">
+            <div class="post">Lorem Ipsum</div>
+            <p class="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ullamcorper odio. Phasellus congue
+              varius placerat. Quisque vel purus convallis.
+            </p>
+          </div>
+          <div class="timeline-icon">
+            <i class="fa fa-rocket"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 timeline">
+        <div class="timeline-inner">
+          <div class="year">2018</div>
+          <div class="timeline-content">
+            <div class="post">Lorem Ipsum</div>
+            <p class="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ullamcorper odio. Phasellus congue
+              varius placerat. Quisque vel purus convallis.
+            </p>
+          </div>
+          <div class="timeline-icon">
+            <i class="fa fa-briefcase"></i>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 col-sm-6 timeline">
+        <div class="timeline-inner">
+          <div class="year">2017</div>
+          <div class="timeline-content">
+            <div class="post">Lorem Ipsum</div>
+            <p class="description">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec eget ullamcorper odio. Phasellus congue
+              varius placerat. Quisque vel purus convallis.
+            </p>
+          </div>
+          <div class="timeline-icon">
+            <i class="fa fa-camera"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<!-- Gallery -->
+<div class="container" id="galeri-section" style="margin-top: 100px;">
+  <h2 class="pb-2 border-bottom">Galeri</h2>
+  <div class="row">
+    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
+      <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+        class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+
+      <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp" class="w-100 shadow-1-strong rounded mb-4"
+        alt="Wintry Mountain Landscape" />
+    </div>
+
+    <div class="col-lg-4 mb-4 mb-lg-0">
+      <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp" class="w-100 shadow-1-strong rounded mb-4"
+        alt="Mountains in the Clouds" />
+
+      <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
+        class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+    </div>
+
+    <div class="col-lg-4 mb-4 mb-lg-0">
+      <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
+        class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+
+      <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp" class="w-100 shadow-1-strong rounded mb-4"
+        alt="Yosemite National Park" />
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="container" id="hatıra-section" style="margin-top: 100px;">
+  <h2 class="pb-2 border-bottom">Hatıra Duvarı</h2>
+</div>
+
+<div class="album py-5 bg-body-tertiary">
+  <div class="container">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="memory1 .png" alt="Ünal SADE" class="card-img-top" />
+          <div class="card-body">
+            <p class="card-text">Resul Abinin bu hayalini gerçekleştiremedik. 8 Şubat 2024’te onu “sırladık”…</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="text-body-secondary" style="position: relative;">
+                <small class="text-body-secondary">Ünal Sade</small>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary"
+                  onclick="window.open('memory1.html', '_self')">OKU</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="memory2 .png" alt="Hasan OTHAN KARS/Serhat BİRİKİM" class="card-img-top" />
+          <div class="card-body">
+            <p class="card-text">Pusula Call Center’ın Genel Müdürlük Müdürü Resul GÜLMEZ, geçirdiği bir rahatsızlık sonucu yaşama gözlerini yumdu.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="text-body-secondary" style="position: relative;">
+                <small class="text-body-secondary">Hasan OTHAN KARS/Serhat BİRİKİM</small>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary"
+                  onclick="window.open('memory2.html', '_self')">OKU</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card shadow-sm">
+          <img src="memory1 .png" alt="Ayhan ARTAR" class="card-img-top" />
+          <div class="card-body">
+            <p class="card-text">Kendi adıma söylemek isterim ki Türk Telekom bünyesinde ekibimle birlikte yaptığım TT Akademi ve kurumsal gelişim
+            çalışmalarımız da rahmetli Resul GÜLMEZ ’in bizlere stratejik katkısı olmuştur.</p>
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="text-body-secondary" style="position: relative;">
+                <small class="text-body-secondary">Ayhan ARTAR</small>
+              </div>
+              <div class="btn-group">
+                <button type="button" class="btn btn-sm btn-outline-secondary"
+                  onclick="window.open('memory3.html', '_self')">OKU</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+  <div class="col-md-4 d-flex align-items-center">
+    <a href="/" class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+      <svg class="bi" width="30" height="24">
+        <use xlink:href="#bootstrap"></use>
+      </svg>
+    </a>
+    <span class="mb-3 mb-md-0 text-body-secondary">© 2024 Company, Inc</span>
+  </div>
+
+  <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
+    <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24">
+          <use xlink:href="#twitter"></use>
+        </svg></a></li>
+    <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24">
+          <use xlink:href="#instagram"></use>
+        </svg></a></li>
+    <li class="ms-3"><a class="text-body-secondary" href="#"><svg class="bi" width="24" height="24">
+          <use xlink:href="#facebook"></use>
+        </svg></a></li>
+  </ul>
+</footer>
+
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
