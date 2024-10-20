@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
   <title>Profile</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
@@ -33,7 +33,7 @@
       /* Hafif gölge */
       transition: background-color 0.3s, transform 0.3s;
       /* Renk ve konum geçişi */
-      transform: translateY(-50px);
+      transform: translateY(75px);
       /* 3 birim yukarı kaydır */
     }
 
@@ -41,11 +41,6 @@
       background-color: #D1D1D1;
       /* Gri */
     }
-
-     @media (max-width: 600px) {
-            h2 {
-                font-size: 2rem; /* Adjust font size for smaller screens */
-            }
 
     .profile-container {
       text-align: center;
@@ -304,28 +299,128 @@
     border-color: rgb(240, 238, 238); /* Soft gray */
 }
 
-@media only screen and (max-width: 990px) {
-    .main-timeline10 .timeline-inner:after {
-        width: 110%;
+/* Media Queries for Responsive Design */
+@media (max-width: 992px) { /* Medium screens */
+    .main-timeline10 .col-md-3 {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
     }
-    .main-timeline10 .timeline:nth-child(2n) .timeline-inner:after {
-        width: 0;
+
+    .main-timeline10 .year {
+        font-size: 20px; /* Adjust font size */
+    }
+
+    .main-timeline10 .post {
+        font-size: 22px; /* Adjust title size */
+    }
+
+    .main-timeline10 .description {
+        font-size: 12px; /* Adjust description size */
     }
 }
 
-@media only screen and (max-width: 767px) {
-    .main-timeline10 .timeline {
-        margin-bottom: 50px;
+@media (max-width: 768px) { /* Small screens */
+    .main-timeline10 .col-md-3 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%;
     }
-    .main-timeline10 .timeline-inner:after,
-    .main-timeline10 .timeline:nth-child(2n) .timeline-inner:after {
-        width: 100%;
-        height: 3px;
-        left: 0;
+
+    .main-timeline10 .year {
+        font-size: 18px; /* Adjust font size */
     }
+
+    .main-timeline10 .post {
+        font-size: 20px; /* Adjust title size */
+    }
+
+    .main-timeline10 .description {
+        font-size: 12px; /* Adjust description size */
+    }
+
+    .main-timeline10 .timeline-icon {
+        width: 50px; /* Smaller icon for mobile */
+        height: 50px;
+        line-height: 45px;
+        font-size: 24px;
+    }
+}
+/* Mobile Styles */
+@media screen and (max-width: 767px) {
+  body {
+    background-color: #e9ecef; /* Change background color for mobile */
+    font-size: 14px; /* Adjust font size for readability on smaller screens */
+  }
+
+  .profile-container {
+    padding: 1rem; /* Add padding to the container for mobile */
+  }
+
+  .profile-info {
+    flex-direction: column; /* Stack items vertically */
+    padding: 0 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .profile-info img {
+    width: 80%; /* Responsive width for images */
+    height: auto; /* Maintain aspect ratio */
+    margin: 0 auto; /* Center image */
+  }
+
+  .details {
+    text-align: center; /* Center text on smaller screens */
+  }
+
+  .date-location {
+    align-items: center; /* Center items */
+    margin-left: 0; /* Remove left margin */
+    margin-top: 1rem; /* Add some top margin */
+  }
+}
+#about-section {
+  margin-top: 3cm; /* Moves the section down by 3 cm */
 }
 
 
+/* Styles for tablets and larger screens */
+@media (min-width: 500px) {
+  .profile-info {
+    flex-direction: row; /* Align items in a row */
+    padding: 0 20rem; /* Wider padding for larger screens */
+  }
+
+  .profile-info img {
+    width: 350px; /* Keep original size for larger screens */
+    height: 350px;
+    margin-bottom: 0; /* Remove bottom margin */
+  }
+
+  .details {
+    text-align: left; /* Left align text on larger screens */
+  }
+
+  .date-location {
+    margin-left: 1rem; /* Add left margin for larger screens */
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-info {
+    flex-direction: column;
+    align-items: center; /* Center align items for smaller screens */
+  }
+
+  .profile-photo {
+    width: 80px; /* Smaller size for mobile */
+    height: 80px; /* Smaller size for mobile */
+    margin-bottom: 10px; /* Space below photo */
+  }
+
+  .profile-name {
+    font-size: 2rem; /* Smaller font size */
+  }
+}
   </style>
 </head>
 
@@ -341,7 +436,7 @@
         <h2 style="font-size: 2.5rem; font-weight: bold; font-family: 'Roboto Mono', monospace;">Resul Gülmez</h2>
 
     <div class="date-location">
-      <div style="display: flex; align-items: center; gap: 20px;">
+      <div style="display: flex; align-items: center; gap: 0px;">
         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-calendar-heart"
           viewBox="0 0 16 16">
           <path fill-rule="evenodd"
@@ -360,58 +455,73 @@
 
 
 
+    <figure class="text-center mt-5">
+      <blockquote class="blockquote">
+        <p>A well-known quote, contained in a blockquote element.</p>
+      </blockquote>
+    </figure>
 
 
-  <div class="d-flex gap-1 justify-content-center">
-    <span class="badge d-flex align-items-center p-1 pe-2 rounded-pill">
-      <a href="#about-section" style="text-decoration: none; color: inherit;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-file-person me-1"
-          viewBox="0 0 16 16">
-          <path
-            d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
-          <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
-        </svg> Hakkında
-      </a>
-    </span>
-    <span class="badge d-flex align-items-center p-1 pe-10 rounded-pill">
-      <a href="#Favoriler-section" style="text-decoration: none; color: inherit;">
+<div class="d-flex gap-1 justify-content-center flex-wrap">
+  <span class="badge d-flex align-items-center p-1 pe-2 rounded-pill">
+    <a href="#about-section" style="text-decoration: none; color: inherit;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-file-person me-1"
+        viewBox="0 0 16 16">
+        <path
+          d="M12 1a1 1 0 0 1 1 1v10.755S12 11 8 11s-5 1.755-5 1.755V2a1 1 0 0 1 1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2z" />
+        <path d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6" />
+      </svg> Hakkında
+    </a>
+  </span>
+  <span class="badge d-flex align-items-center p-1 pe-10 rounded-pill">
+    <a href="#Favoriler-section" style="text-decoration: none; color: inherit;">
       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-heart-fill me-1"
         viewBox="0 0 16 16">
         <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314" />
       </svg>Favoriler
-      </a>
-    </span>
-    <span class="badge d-flex align-items-center p-1 pe-10 rounded-pill">
-      <a href="#Zaman-section" style="text-decoration: none; color: inherit;">
-      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-calendar-week me-1"
-        viewBox="0 0 16 16">
+    </a>
+  </span>
+  <span class="badge d-flex align-items-center p-1 pe-10 rounded-pill">
+    <a href="#Zaman-section" style="text-decoration: none; color: inherit;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor"
+        class="bi bi-calendar-week me-1" viewBox="0 0 16 16">
         <path
           d="M11 6.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-5 3a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z" />
         <path
           d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z" />
       </svg>Zaman Çizelgesi
-      </a>
-    </span>
-    <span class="badge d-flex align-items-center p-1 pe-2 rounded-pill">
-      <a href="#galeri-section" style="text-decoration: none; color: inherit;">
+    </a>
+  </span>
+  <span class="badge d-flex align-items-center p-1 pe-2 rounded-pill">
+    <a href="#galeri-section" style="text-decoration: none; color: inherit;">
       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-images me-1"
         viewBox="0 0 16 16">
         <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3" />
         <path
           d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2M14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1M2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1z" />
       </svg>Galeri
-      </a>
-    </span>
-    <span class="badge d-flex align-items-center p-1 pe-2 rounded-pill">
-      <a href="#hatıra-section" style="text-decoration: none; color: inherit;">
+    </a>
+  </span>
+  <span class="badge d-flex align-items-center p-1 pe-2 rounded-pill">
+    <a href="#hatıra-section" style="text-decoration: none; color: inherit;">
       <svg xmlns="http://www.w3.org/2000/svg" width="50" height="30" fill="currentColor" class="bi bi-memory me-1"
         viewBox="0 0 16 16">
         <path
           d="M1 3a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.586a1 1 0 0 0 .707-.293l.353-.353a.5.5 0 0 1 .708 0l.353.353a1 1 0 0 0 .707.293H15a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zm.5 1h3a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5m5 0h3a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-4a.5.5 0 0 1 .5-.5m4.5.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5" />
       </svg>Hatıra Duvarı
-      </a>
-    </span>
-  </div>
+    </a>
+  </span>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js" integrity="sha384
+
+
+
+
+
+
+
+  
   
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-qb6WXj7B2zFVlps1e/YpTAcfewcdvZ6JJ1LcUp8iZfqK2EbsrKRmTPDztkLXQKp8" crossorigin="anonymous"></script>
@@ -425,18 +535,11 @@
 
 
   
-  <figure class="text-center mt-5">
-    <blockquote class="blockquote">
-      <p>A well-known quote, contained in a blockquote element.</p>
-    </blockquote>
-    <figcaption class="blockquote-footer">
-      Someone famous in <cite title="Source Title">Source Title
-    </figcaption>
-  </figure>
+ 
   
   <div class="container px-4 py-5" id="about-section">
     <h2 class="pb-2 border-bottom">Hakkında</h2>
-    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+    <div class="row g-4 py- row-cols-1 row-cols-lg-3">
       <p>Lorem ipsum odor amet, consectetuer adipiscing elit. Morbi fames nostra bibendum nam neque facilisi volutpat. Ex
         placerat cursus sollicitudin orci facilisis elit adipiscing felis. Venenatis tempus tempor inceptos; mi commodo
         vel
@@ -743,7 +846,7 @@
   </ul>
 </footer>
 
-
+</body>
 
 </html>
 

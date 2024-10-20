@@ -13,21 +13,22 @@
             margin: 0;
             padding: 0;
             color: #333;
+            line-height: 1.6;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            max-width: 100%;
             padding: 20px;
+            box-sizing: border-box;
         }
 
         header {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         h1 {
-            font-size: 2.5em;
+            font-size: 1.8em;
             margin-bottom: 10px;
         }
 
@@ -37,68 +38,95 @@
         }
 
         main {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         article h2 {
-            font-size: 2em;
+            font-size: 1.5em;
             margin-bottom: 15px;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
         }
 
         footer {
             text-align: center;
             font-size: 0.8em;
             color: #666;
+            margin-top: 30px;
         }
 
-        </style>
-        </head>
+        .source {
+            margin-top: 30px;
+        }
 
-        <body>
-            <div class="container">
-                <header>
-                    <h1>Gönül Adamı Merhum Resul GÜLMEZ’i Kaybettik</h1>
-                    <p class="date">Tarih: 02 Ağustos 2024</p>
-                    <p>Hasan OTHAN KARS / Serhat BİRİKİM</p>
-                    <div class="author-container">
-                    </div>
-                </header>
-                <main>
-                    <article>
-                        <p>Pusula Call Center’ın Genel Müdürlük Müdürü Resul GÜLMEZ, geçirdiği bir rahatsızlık sonucu yaşama gözlerini yumdu.</p>
-                        <img src="memory2 .png">"
-                        <p>Aramızdan ayrılırken arkasında bir sürü güzellik bırakan Resul GÜLMEZ, 08.02.2024 Kalp krizi geçirmiş. Hakk'a yürüyen
-                            ailesine metanetik sabırlar ihsan eylesin.</p>
-                        
-                       
-                        <p>CENAZESİ İKİNDİ NAMAZINA MÜTAKİP ANKARA GÖLBAŞI MEZARLIĞINA DEFNEDİLECEK.</p>
-                        <p>Aramızdan ayrılırken arkasında bir sürü güzellik bırakan Resul GÜLMEZ’in cenazesi ikindi namazında kılınacak cenaze
-                            namazından sonra Gölbaşı mezarlığında toprağa verilecek.</p>
-                        
-                        <p>Serhat Birikim Medya Gurubu olarak Merhum Resul GÜLMEZ’e Allah’tan rahmet, yakınlarına ve GÜLMEZ Ailesine sabır ve
-                            başsağlığı diliyoruz.</p>
-                        
-                      
-                        <p>Resul GÜLMEZ 1949 yılında dünyaya geldi. Ankara Üniversitesi İletişim Fakültesi Gazetecilik ve Halkla İlişkiler
-                            Bölümü mezunu olan GÜLMEZ, 1976 yılında PTT’de başladığı meslek hayatına Türk Telekomünikasyon A.Ş. İnsan Kaynakları
-                            Direktörlüğü ve farklı görevlerde bulunarak devam etti.</p>
-                        <p>2014 yılında emekli oldu. 2015 yılından itibaren Pusula Call Center’da görev yaptı. Halen aynı şirkette Genel
-                            Müdürlük görevini yürütürken 08.02.2024 kalp krizi geçirerek yaşama gözlerini yumdu.</p>
-                        
-                        
-                            <div class="source" style="margin-top: 70px;"> <!-- 3 santim aşağıda olacak şekilde ayarlandı -->
-                                <p style="font-weight: bold;">Haberin Aslı:</p>
-                                <a href="https://www.siyasalbirikim.com.tr/haber/gonul_adami_merhum_resul_gulmezi_kaybettik-6292.html" target="_blank"
-                                    style="color: #007BFF; text-decoration: none;">https://www.siyasalbirikim.com.tr/haber/gonul_adami_merhum_resul_gulmezi_kaybettik-6292.html</a>
-                            </div>
+        @media (min-width: 768px) {
+            .container {
+                max-width: 750px;
+                margin: 0 auto;
+            }
 
-                        </article>
-                        </main>
-                        <footer style="margin-top: 50px;"> <!-- 5 santim aşağıda olacak şekilde ayarlandı -->
-                            <p>© 2024 Tüm Hakları Saklıdır.</p>
-                        </footer>
-                        
-                        </div>
-                        </body>
-                        
-                        </html>
+            h1 {
+                font-size: 2.5em;
+            }
+
+            article h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>Gönül Adamı Merhum Resul GÜLMEZ'i Kaybettik</h1>
+            <p class="date">Tarih: 02 Ağustos 2024</p>
+            <p>Hasan OTHAN KARS / Serhat BİRİKİM</p>
+        </header>
+        <main>
+            <article>
+                <p>Pusula Call Center'ın Genel Müdürlük Müdürü Resul GÜLMEZ, geçirdiği bir rahatsızlık sonucu yaşama
+                    gözlerini yumdu.</p>
+                <img src="memory2 .png" alt="Resul GÜLMEZ">
+                <p>Aramızdan ayrılırken arkasında bir sürü güzellik bırakan Resul GÜLMEZ, 08.02.2024 Kalp krizi
+                    geçirmiş. Hakk'a yürüyen
+                    ailesine metanetik sabırlar ihsan eylesin.</p>
+
+                <p>CENAZESİ İKİNDİ NAMAZINA MÜTAKİP ANKARA GÖLBAŞI MEZARLIĞINA DEFNEDİLECEK.</p>
+                <p>Aramızdan ayrılırken arkasında bir sürü güzellik bırakan Resul GÜLMEZ'in cenazesi ikindi namazında
+                    kılınacak cenaze
+                    namazından sonra Gölbaşı mezarlığında toprağa verilecek.</p>
+
+                <p>Serhat Birikim Medya Gurubu olarak Merhum Resul GÜLMEZ'e Allah'tan rahmet, yakınlarına ve GÜLMEZ
+                    Ailesine sabır ve
+                    başsağlığı diliyoruz.</p>
+
+                <p>Resul GÜLMEZ 1949 yılında dünyaya geldi. Ankara Üniversitesi İletişim Fakültesi Gazetecilik ve Halkla
+                    İlişkiler
+                    Bölümü mezunu olan GÜLMEZ, 1976 yılında PTT'de başladığı meslek hayatına Türk Telekomünikasyon A.Ş.
+                    İnsan Kaynakları
+                    Direktörlüğü ve farklı görevlerde bulunarak devam etti.</p>
+                <p>2014 yılında emekli oldu. 2015 yılından itibaren Pusula Call Center'da görev yaptı. Halen aynı
+                    şirkette Genel
+                    Müdürlük görevini yürütürken 08.02.2024 kalp krizi geçirerek yaşama gözlerini yumdu.</p>
+
+                <div class="source">
+                    <p style="font-weight: bold;">Haberin Aslı:</p>
+                    <a href="https://www.siyasalbirikim.com.tr/haber/gonul_adami_merhum_resul_gulmezi_kaybettik-6292.html"
+                        target="_blank"
+                        style="color: #007BFF; text-decoration: none;">https://www.siyasalbirikim.com.tr/haber/gonul_adami_merhum_resul_gulmezi_kaybettik-6292.html</a>
+                </div>
+            </article>
+        </main>
+        <footer>
+            <p>© 2024 Tüm Hakları Saklıdır.</p>
+        </footer>
+    </div>
+</body>
+
+</html>
