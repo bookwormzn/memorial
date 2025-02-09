@@ -3,7 +3,8 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
   <title>Profile</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
@@ -385,17 +386,6 @@
   margin-top: 3cm; /* Moves the section down by 3 cm */
 }
 
-/* Prevent landscape orientation */
-@media screen and (orientation: landscape) {
-  body {
-    transform: rotate(0deg);
-    overflow: hidden;
-  }
-  .container {
-    transform: scale(0.8); /* You can adjust this value to fit the content properly */
-  }
-}
-
 
 /* Styles for tablets and larger screens */
 @media (min-width: 500px) {
@@ -457,6 +447,54 @@
 
 .card-text {
   margin-bottom: auto; /* İçerik alt boşluklarını düzenler */
+}
+/* Prevent content overflow and overlapping text on small screens */
+@media screen and (max-width: 768px) { /* Small screens */
+  body {
+    font-size: 14px; /* Adjust font size for readability */
+  }
+
+  .profile-info {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    padding: 0 1rem; /* Adjust padding to prevent overflow */
+    align-items: center; /* Center-align the content */
+  }
+
+  .profile-info img {
+    width: 80%; /* Make images responsive */
+    max-width: 100%; /* Prevent overflow of images */
+    height: auto;
+    margin: 0 auto; /* Center image */
+  }
+
+  /* Adjust layout in landscape mode */
+  @media screen and (orientation: landscape) {
+    .profile-info {
+      flex-direction: column; /* Stack vertically in landscape mode */
+    }
+
+    .container {
+      width: 100%;
+      overflow-x: hidden; /* Prevent horizontal overflow */
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .badge {
+      font-size: 14px; /* Adjust font size */
+      padding: 8px 15px; /* Adjust padding */
+      margin: 5px;
+    }
+
+    .main-timeline10 .col-md-3 {
+      flex: 0 0 100%; /* Stack timeline items vertically */
+      max-width: 100%; /* Ensure full width */
+    }
+
+    .card {
+      width: 100%; /* Ensure cards take full width */
+    }
+  }
 }
 
 
