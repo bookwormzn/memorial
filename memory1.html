@@ -57,7 +57,30 @@
             justify-content: center;
             margin-top: 30px;
         }
-    
+    .back-button {
+    display: inline-block;
+    margin-top: 50px;
+    margin-left: -30cm; /* 3 cm left shift */
+    padding: 10px 20px;
+    background-color: #1753932c;
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-family: 'Calibri', sans-serif;
+}
+
+
+        .back-button:hover {
+            background-color: #17539394;
+        }
+
+         @media (max-width: 768px) {
+            .back-button {
+                margin-left: 0; /* Mobil görünümde sol margin'i sıfırla */
+                margin-bottom: 20px;
+            }
+        }
         .author-photo {
             width: 200px;
             height: 200px;
@@ -94,22 +117,7 @@
             }
         }
     
-        .back-home-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 1em;
-            font-weight: bold;
-        }
-    
-        .back-home-button:hover {
-            background-color: #0056b3;
-        }
-    
+       
         @media (min-width: 768px) {
             .container {
                 max-width: 750px;
@@ -129,8 +137,11 @@
 </head>
 
 <body>
+
+   
     <div class="container">
         <header>
+            <a href="index.html" class="back-button"><-- Ana sayfaya dön </a>
             <h1>BELKİ!</h1>
             <p class="date">Tarih: 07 Temmuz 2024</p>
             <p>Ünal SADE</p>
@@ -445,12 +456,12 @@
                 </div>
             </article>
         </main>
-    <footer style="margin-top: 50px;"> <!-- 5 santim aşağıda olacak şekilde ayarlandı -->
-        <a href="index.html" class="back-home-button">Ana Sayfaya Geri Dön</a>
-        <p>© 2024 Tüm Hakları Saklıdır.</p>
-        
+    <footer>
+        <div>
+            <p>© 2024 Tüm Hakları Saklıdır.
+            </p>
+        </div>
     </footer>
-
     </div>
 </body>
 

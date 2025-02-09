@@ -385,6 +385,17 @@
   margin-top: 3cm; /* Moves the section down by 3 cm */
 }
 
+/* Prevent landscape orientation */
+@media screen and (orientation: landscape) {
+  body {
+    transform: rotate(0deg);
+    overflow: hidden;
+  }
+  .container {
+    transform: scale(0.8); /* You can adjust this value to fit the content properly */
+  }
+}
+
 
 /* Styles for tablets and larger screens */
 @media (min-width: 500px) {
@@ -459,7 +470,7 @@
     <div class="header-image"></div>
 
     <div class="profile-info">
-      <img src="./back-Photoroom.png" alt="Profile Photo">
+      <img src="./back.jpg" alt="Profile Photo">
 
       <div class="details">
         <h2 style="font-size: 2.5rem; font-weight: bold; font-family: 'Roboto Mono', monospace;">Resul Gülmez</h2>
@@ -471,8 +482,7 @@
           <path fill-rule="evenodd"
             d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4zM1 14V4h14v10a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1m7-6.507c1.664-1.711 5.825 1.283 0 5.132-5.825-3.85-1.664-6.843 0-5.132" />
         </svg>
-        <p style="margin-left: 10px; margin-top: 20px; font-family: 'Roboto Mono', monospace;">4 Temmuz, 2000 - 4 Temmuz,
-          2100</p>
+        <p style="margin-left: 10px; margin-top: 20px; font-family: 'Roboto Mono', monospace;"> 1949 - 2024</p>
       </div>
     </div>
         </div>
